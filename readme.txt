@@ -3,8 +3,8 @@ Contributors: yuanga
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MML89T2AZE2PY
 Tags: html5, swiffy, shortcode, insert, animation, flash, swf, google, tablet, iphone, ipad
 Requires at least: 3.0
-Tested up to: 3.4.1
-Stable tag: 1.1
+Tested up to: 3.5.1
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,9 @@ HTML5 Swiffy Insert is a simple plugin that lets you to use a shortcode to inser
 Yes! It's free!
 
 == Changelog ==
+
+= 1.2 =
+* Updated Swiffy Runtime JS
 
 = 1.1 =
 * Insert swiffy animations in your posts too!

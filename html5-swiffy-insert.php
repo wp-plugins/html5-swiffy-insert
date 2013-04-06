@@ -3,15 +3,15 @@
 Plugin Name: HTML5 Swiffy Insert 
 Plugin URI: http://www.unniks.com/ublog/html5-swiffy-insert/
 Description: <strong>HTML5 Swiffy Insert</strong> is a simple plugin that lets you to use a shortcode to insert HTML5 animations generated with Google Swiffy. Swiffy converts Flash SWF files to HTML5, allowing you to reuse Flash content on devices without a Flash player (such as iPhones and iPads).
-Version: 1.1
+Version: 1.2
 Author: Yuanga 
 Author URI: http://www.unniks.com 
 */  
 ?>
-<?
+<?php
 function my_scripts_html5_swiffy_insert() {
 	wp_deregister_script( 'html5_swiffy_insert_script' );
-	wp_register_script( 'html5_swiffy_insert_script', 'https://www.gstatic.com/swiffy/v4.7/runtime.js');
+	wp_register_script( 'html5_swiffy_insert_script', 'https://www.gstatic.com/swiffy/v5.0/runtime.js');
 	wp_enqueue_script( 'html5_swiffy_insert_script' );
 }  
 add_action('wp_enqueue_scripts', 'my_scripts_html5_swiffy_insert');
@@ -52,6 +52,7 @@ function html5_swiffy_insert_post() {
 		}
 	}while($detenir_bucle == 0);
 }
+//SHORTCODE
 function shortcode_html5_swiffy_insert($atts) {
 	extract(shortcode_atts(array(
 		  'n' => '1',
@@ -60,10 +61,10 @@ function shortcode_html5_swiffy_insert($atts) {
      ), $atts));
 	return "<div id='swiffycontainer_{$n}' style='width: {$w}px; height: {$h}px;'></div>";
 }
+add_shortcode('swiffy', 'shortcode_html5_swiffy_insert');
 /*
 Menu
 */
-add_shortcode('swiffy', 'shortcode_html5_swiffy_insert');
 function  menu_plugin_ayudawordpress(){
    add_plugins_page("Ayuda HTML5 Swiffy Insert", "HTML5 Swiffy Insert", 10, "plugin_ayuda_wordpress", "pagina_html5_swiffy_insert");
    /*
